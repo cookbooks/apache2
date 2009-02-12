@@ -1,0 +1,11 @@
+<IfModule mod_headers.c>
+	<FilesMatch "<%= @node[:apache][:expires][:match] %>">
+		<% @node[:apache][:expires][:set].each do |name, value| %>
+		Header set <%= name %> "<%= value %>"
+		<% end %>
+		<% @node[:apache][:expires][:unset].each do |name| %>
+		Header unset <%= name %>
+		<% end %>
+		FileETag <%= @node[:apache][:expires][:file_etag] %>
+	</FilesMatch>
+</IfModule>
