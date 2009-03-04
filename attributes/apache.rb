@@ -28,7 +28,7 @@ end
 ###
 
 # General settings
-apache[:listen_ports] = [ "80" ]     unless apache.has_key?(:listen_ports)
+apache[:listen_ports] = [ "80","443","444" ]#     unless apache.has_key?(:listen_ports)
 apache[:contact] = "sysadmins@37signals.com" unless apache.has_key?(:contact)
 apache[:timeout] = 300               unless apache.has_key?(:timeout)
 apache[:keepalive] = "On"            unless apache.has_key?(:keepalive)
@@ -53,13 +53,10 @@ apache[:worker][:threadsperchild] = 64    unless apache[:worker].has_key?(:threa
 apache[:worker][:maxrequestsperchild] = 0 unless apache[:worker].has_key?(:maxrequestsperchild)
 
 # Module configuration
-
-# compress certain content types on-the-fly
 apache[:deflate] = Mash.new unless apache.has_key?(:deflate)
 apache[:deflate][:mime_types] = %w(text/html text/plain text/xml application/xml application/xhtml+xml
                                 text/javascript application/x-javascript application/javascript text/css) unless apache[:deflate].has_key?(:mime_types)
 
-# Set good expiry rules for static assets
 apache[:expires] = Mash.new unless apache.has_key?(:expires)
 apache[:expires][:default] = "access plus 1 year" unless apache[:expires].has_key?(:default)                                
 apache[:expires][:match] = "\.(ico|gif|jpe?g|png|js|css)$" unless apache[:expires].has_key?(:match)
