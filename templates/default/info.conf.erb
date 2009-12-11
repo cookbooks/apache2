@@ -1,0 +1,8 @@
+<IfModule mod_info.c>
+  <Location /server-info>
+    SetHandler server-info
+    order deny,allow
+    deny from all
+    allow from localhost
+  </Location>
+</IfModule>

@@ -1,0 +1,6 @@
+<IfModule mod_expires.c>
+  <FilesMatch "<%= @node[:apache][:expires][:match] %>">
+    ExpiresActive On
+    ExpiresDefault "<%= @node[:apache][:expires][:default]%>"
+  </FilesMatch>
+</IfModule>

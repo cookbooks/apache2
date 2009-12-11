@@ -1,0 +1,10 @@
+<% unless @node[:apache][:deflate][:disable] -%>
+<IfModule mod_deflate.c>
+ AddOutputFilterByType DEFLATE <%= @mime_types %>
+ DeflateMemLevel 9
+ DeflateCompressionLevel 9
+
+ # Exclude Basecamp uploads
+ SetEnvIf Request_URI "^/dl/" no-gzip dont-vary
+</IfModule>
+<% end -%>
