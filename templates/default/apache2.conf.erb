@@ -89,10 +89,13 @@ SetEnvIf User-Agent "^websitepulse.*" no-log
 # Only include the mtime and size in the ETag by default
 FileETag MTime Size
 
-# Workaround for apache ETag bugs, see http://scarff.id.au/blog/2009/apache-304-and-mod%5Fdeflate-revisited/
-
 <Location />
+ # Disable directory indexes globally.
+ Options -Indexes
+
+ # Workaround for apache ETag bugs, see http://scarff.id.au/blog/2009/apache-304-and-mod%5Fdeflate-revisited/
  RequestHeader  edit "If-None-Match" "^(.*)-gzip$" "$1"
+
  # the following may be needed if the header quoting format is fixed but appending -gzip is not
  # Header  edit "ETag" "^(.*[^g][^z][^i][^p])$" "$1-gzip"
 </Location>

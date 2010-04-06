@@ -1,72 +1,24 @@
 {
-  "replacing": {
+  "groupings": {
 
   },
-  "long_description": "",
-  "attributes": {
-
-  },
-  "maintainer": "37signals",
   "recommendations": {
-
-  },
-  "license": "Apache v2.0",
-  "recipes": {
-    "apache2::mod_dav": "",
-    "apache2::mod_deflate": "",
-    "apache2::mod_mime": "",
-    "apache2::mod_php5": "",
-    "apache2::mod_fastcgi": "",
-    "apache2::mod_authz_groupfile": "",
-    "apache2::mod_ssl": "",
-    "apache2::mod_negotiation": "",
-    "apache2::mod_python": "",
-    "apache2::mod_setenvif": "",
-    "apache2::mod_cgi": "",
-    "apache2::mod_auth_basic": "",
-    "apache2::mod_autoindex": "",
-    "apache2::mod_dav_svn": "",
-    "apache2::mod_authz_host": "",
-    "apache2::mod_authn_yubikey": "",
-    "apache2::mod_rewrite": "",
-    "apache2::mod_authz_user": "",
-    "apache2::mod_auth_token": "",
-    "apache2::mod_headers": "",
-    "apache2::mod_auth_digest": "",
-    "apache2::mod_fcgid": "",
-    "apache2::mod_proxy": "",
-    "apache2::mod_authnz_ldap": "",
-    "apache2::mod_env": "",
-    "apache2::mod_alias": "",
-    "apache2::mod_ldap": "",
-    "apache2::mod_status": "",
-    "apache2::mod_log_config": "",
-    "apache2": "",
-    "apache2::mod_expires": "",
-    "apache2::mod_proxy_http": "",
-    "apache2::mod_authn_file": "",
-    "apache2::mod_xsendfile": "",
-    "apache2::mod_dir": "",
-    "apache2::mod_authz_default": ""
-  },
-  "maintainer_email": "sysadmins@37signals.com",
-  "suggestions": {
-
-  },
-  "dependencies": {
-    "logrotate": [
-
-    ]
-  },
-  "conflicting": {
 
   },
   "platforms": {
 
   },
-  "description": "Configures apache2",
+  "license": "Apache v2.0",
+  "maintainer": "37signals",
+  "suggestions": {
+
+  },
+  "maintainer_email": "sysadmins@37signals.com",
   "version": "0.1.0",
-  "name": "apache2",
+  "conflicting": {
+
+  },
+  "description": "Configures apache2",
   "providing": {
     "apache2::mod_dav": [
 
@@ -104,10 +56,10 @@
     "apache2::mod_auth_basic": [
 
     ],
-    "apache2::mod_autoindex": [
+    "apache2::mod_dav_svn": [
 
     ],
-    "apache2::mod_dav_svn": [
+    "apache2::mod_autoindex": [
 
     ],
     "apache2::mod_authz_host": [
@@ -128,10 +80,10 @@
     "apache2::mod_headers": [
 
     ],
-    "apache2::mod_auth_digest": [
+    "apache2::mod_fcgid": [
 
     ],
-    "apache2::mod_fcgid": [
+    "apache2::mod_auth_digest": [
 
     ],
     "apache2::mod_proxy": [
@@ -146,19 +98,19 @@
     "apache2::mod_alias": [
 
     ],
-    "apache2::mod_ldap": [
+    "apache2::mod_status": [
 
     ],
-    "apache2::mod_status": [
+    "apache2::mod_ldap": [
 
     ],
     "apache2::mod_log_config": [
 
     ],
-    "apache2": [
+    "apache2::mod_expires": [
 
     ],
-    "apache2::mod_expires": [
+    "apache2": [
 
     ],
     "apache2::mod_proxy_http": [
@@ -174,6 +126,57 @@
 
     ],
     "apache2::mod_authz_default": [
+
+    ]
+  },
+  "name": "apache2",
+  "attributes": {
+
+  },
+  "long_description": "",
+  "recipes": {
+    "apache2::mod_dav": "",
+    "apache2::mod_deflate": "",
+    "apache2::mod_mime": "",
+    "apache2::mod_php5": "",
+    "apache2::mod_fastcgi": "",
+    "apache2::mod_authz_groupfile": "",
+    "apache2::mod_ssl": "",
+    "apache2::mod_negotiation": "",
+    "apache2::mod_python": "",
+    "apache2::mod_setenvif": "",
+    "apache2::mod_cgi": "",
+    "apache2::mod_auth_basic": "",
+    "apache2::mod_dav_svn": "",
+    "apache2::mod_autoindex": "",
+    "apache2::mod_authz_host": "",
+    "apache2::mod_authn_yubikey": "",
+    "apache2::mod_rewrite": "",
+    "apache2": "",
+    "apache2::mod_authz_user": "",
+    "apache2::mod_auth_token": "",
+    "apache2::mod_headers": "",
+    "apache2::mod_fcgid": "",
+    "apache2::mod_auth_digest": "",
+    "apache2::mod_proxy": "",
+    "apache2::mod_authnz_ldap": "",
+    "apache2::mod_env": "",
+    "apache2::mod_alias": "",
+    "apache2::mod_status": "",
+    "apache2::mod_ldap": "",
+    "apache2::mod_log_config": "",
+    "apache2::mod_expires": "",
+    "apache2::mod_proxy_http": "",
+    "apache2::mod_authn_file": "",
+    "apache2::mod_xsendfile": "",
+    "apache2::mod_dir": "",
+    "apache2::mod_authz_default": ""
+  },
+  "replacing": {
+
+  },
+  "dependencies": {
+    "logrotate": [
 
     ]
   }
