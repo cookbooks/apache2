@@ -3,7 +3,7 @@ default.apache[:log_dir] = "/var/log/apache2"
 default.apache[:user]    = "www-data"
 default.apache[:binary]  = "/usr/sbin/apache2"
 default.apache[:icondir] = "/usr/share/apache2/icons"
-default.apache[:version] = "2.2.9-7ubuntu3.5"
+default.apache[:version] = "2.2.12-1ubuntu2"
 
 default.apache[:listen_ports] = ["80"]     
 default.apache[:contact] = "sysadmins@37signals.com" 
