@@ -204,7 +204,9 @@ include_recipe "apache2::mod_setenvif"
 include_recipe "apache2::mod_log_config" if platform?("centos", "redhat", "suse", "arch", "amazon")
 
 # uncomment to get working example site on centos/redhat/fedora
-#apache_site "default"
+if platform?("centos", "redhat", "fedora", "amazon")
+  apache_site "default"
+end
 
 service "apache2" do
   action :start
