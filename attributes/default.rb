@@ -55,7 +55,7 @@ end
 ###
 
 # General settings
-default[:apache][:listen_ports] = [ "80","443" ]
+default[:apache][:listen_ports] = [ "80", "443" ]
 default[:apache][:contact] = "ops@example.com"
 default[:apache][:timeout] = 300
 default[:apache][:keepalive] = "On"
@@ -85,3 +85,7 @@ default[:apache][:worker][:minsparethreads] = 64
 default[:apache][:worker][:maxsparethreads] = 192
 default[:apache][:worker][:threadsperchild] = 64
 default[:apache][:worker][:maxrequestsperchild] = 0
+
+# Proxy Attributes
+default[:apache][:proxy][:forward] = true
+default[:apache][:proxy][:reverse] = Array.new
