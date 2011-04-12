@@ -203,8 +203,7 @@ include_recipe "apache2::mod_negotiation"
 include_recipe "apache2::mod_setenvif"
 include_recipe "apache2::mod_log_config" if platform?("centos", "redhat", "suse", "arch", "amazon")
 
-# uncomment to get working example site on centos/redhat/fedora
-if platform?("centos", "redhat", "fedora", "amazon")
+if node[:apache][:default_site]
   apache_site "default"
 end
 

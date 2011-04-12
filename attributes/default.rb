@@ -17,9 +17,19 @@
 # limitations under the License.
 #
 
+default[:apache][:default_site] = false
+
 # Where the various parts of apache are
 case platform
-when "redhat","centos","fedora","suse","amazon"
+when "redhat","centos","fedora","amazon"
+  set[:apache][:dir]     = "/etc/httpd"
+  set[:apache][:log_dir] = "/var/log/httpd"
+  set[:apache][:user]    = "apache"
+  set[:apache][:binary]  = "/usr/sbin/httpd"
+  set[:apache][:icondir] = "/var/www/icons/"
+  set[:apache][:cache_dir] = "/var/cache/httpd"
+  default[:apache][:default_site] = true
+when "suse"
   set[:apache][:dir]     = "/etc/httpd"
   set[:apache][:log_dir] = "/var/log/httpd"
   set[:apache][:user]    = "apache"
