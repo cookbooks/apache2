@@ -6,11 +6,11 @@ Complete Debian/Ubuntu style Apache2 configuration.
 
 Debian or Ubuntu preferred.
 
-Red Hat, CentOS, Fedora and ArchLinux can be used but will be converted to a Debian/Ubuntu style Apache as it's far easier to manage with Chef.
+Red Hat, CentOS, Fedora, ArchLinux, and Amazon Linux can be used but will be converted to a Debian/Ubuntu style Apache as it's far easier to manage with Chef.
 
 = ATTRIBUTES:
 
-The file attributes/apache.rb contains the following attribute types:
+The file attributes/default.rb contains the following attribute types:
 
 * platform specific locations and settings.
 * general settings
@@ -59,6 +59,12 @@ Installs the +mod_auth_openid+ module from source. Specify an array of OpenIDs t
     AuthOpenIDUserProgram /usr/local/bin/mod_auth_openid.rb
 
 Change the DBLocation as appropriate for your platform. You'll need to change the file in the recipe to match. The UserProgram is optional if you don't want to limit access by certain OpenIDs.
+
+== Default Site
+
+On Red Hat, CentOS, Fedora, and Amazon Linux the default website (aka the Apache HTTPD test page) is enabled by default. For all other platforms, it is disabled by default.
+
+To enable or disable it, set +[:apache][:default_site]+ to either true or false as desired.
 
 = LICENSE & AUTHOR:
 
