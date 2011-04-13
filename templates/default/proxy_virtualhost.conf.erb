@@ -1,9 +1,0 @@
-<VirtualHost *:80>
-  ServerName <%= @proxy_name %>
-
-  <% @url_map.each do | um | %>
-  ProxyPass <%= um[:from] %> <%= um[:to] %>
-  ProxyPassReverse  <%= um[:from] %> <%= um[:to] %>
-  <% end %>
-  
-</VirtualHost>
