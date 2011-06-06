@@ -200,9 +200,10 @@ include_recipe "apache2::mod_env"
 include_recipe "apache2::mod_mime"
 include_recipe "apache2::mod_negotiation"
 include_recipe "apache2::mod_setenvif"
-include_recipe "apache2::mod_log_config" if platform?("centos", "redhat", "fedora", "suse", "arch")
+include_recipe "apache2::mod_log_config" if platform?("centos", "redhat", "suse", "arch")
 
-apache_site "default" if platform?("centos", "redhat", "fedora")
+# uncomment to get working example site on centos/redhat/fedora
+#apache_site "default"
 
 service "apache2" do
   action :start
