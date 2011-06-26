@@ -497,7 +497,8 @@
     "apache2::mod_rewrite": "Apache module 'rewrite'",
     "apache2::mod_setenvif": "Apache module 'setenvif' with config file",
     "apache2::mod_ssl": "Apache module 'ssl' with config file, adds port 443 to listen_ports",
-    "apache2::mod_status": "Apache module 'status' with config file"
+    "apache2::mod_status": "Apache module 'status' with config file",
+    "apache2::proxy_virtualhost": "Virtualhost configuration for reverse proxy"
   },
   "version": "0.99.2"
 }
