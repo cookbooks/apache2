@@ -60,27 +60,11 @@ Installs the +mod_auth_openid+ module from source. Specify an array of OpenIDs t
 
 Change the DBLocation as appropriate for your platform. You'll need to change the file in the recipe to match. The UserProgram is optional if you don't want to limit access by certain OpenIDs.
 
-== Proxy Configuration:
+== Default Site
 
-Both forward and reverse proxies are supported. You can configure either or both at the same time if desired.
+On Red Hat, CentOS, Fedora, and Amazon Linux the default website (aka the Apache HTTPD test page) is enabled by default. For all other platforms, it is disabled by default.
 
-To enable a forward proxy, set +[:apache][:proxy][:forward]+ to true. The default is false.
-
-To enable a reverse proxy, set +[:apache][:proxy][:reverse]+ to an array of hashes. Each hash contains the servername for the virtual host and an array of URL maps.
-
-    {
-      "servername": "dev.hrworx.com",
-      "url_map": [ ... ]
-    }
-
-+url_map+ is itself an array of hashes, each listing the URL to proxy (i.e. what the browser sends) and the URL to forward it to.
-
-    {
-      "from": "/external/endpoint",
-      "to": "http://internal.localdomain/internal/endpoint"
-    }
-
-Both +ProxyPass+ and +ProxyPassReverse+ are automatically configured.
+To enable or disable it, set +[:apache][:default_site]+ to either true or false as desired.
 
 = LICENSE & AUTHOR:
 
