@@ -40,7 +40,6 @@ recipe            "apache2::mod_rewrite", "Apache module 'rewrite'"
 recipe            "apache2::mod_setenvif", "Apache module 'setenvif' with config file"
 recipe            "apache2::mod_ssl", "Apache module 'ssl' with config file, adds port 443 to listen_ports"
 recipe            "apache2::mod_status", "Apache module 'status' with config file"
-recipe            "apache2::proxy_virtualhost", "Virtualhost configuration for reverse proxy"
 
 %w{redhat centos debian ubuntu arch amazon}.each do |os|
   supports os

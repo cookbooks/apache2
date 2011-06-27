@@ -17,9 +17,19 @@
 # limitations under the License.
 #
 
+default[:apache][:default_site] = false
+
 # Where the various parts of apache are
 case platform
-when "redhat","centos","fedora","suse","amazon"
+when "redhat","centos","fedora","amazon"
+  set[:apache][:dir]     = "/etc/httpd"
+  set[:apache][:log_dir] = "/var/log/httpd"
+  set[:apache][:user]    = "apache"
+  set[:apache][:binary]  = "/usr/sbin/httpd"
+  set[:apache][:icondir] = "/var/www/icons/"
+  set[:apache][:cache_dir] = "/var/cache/httpd"
+  default[:apache][:default_site] = true
+when "suse"
   set[:apache][:dir]     = "/etc/httpd"
   set[:apache][:log_dir] = "/var/log/httpd"
   set[:apache][:user]    = "apache"
@@ -55,7 +65,7 @@ end
 ###
 
 # General settings
-default[:apache][:listen_ports] = [ "80", "443" ]
+default[:apache][:listen_ports] = [ "80","443" ]
 default[:apache][:contact] = "ops@example.com"
 default[:apache][:timeout] = 300
 default[:apache][:keepalive] = "On"
@@ -85,7 +95,3 @@ default[:apache][:worker][:minsparethreads] = 64
 default[:apache][:worker][:maxsparethreads] = 192
 default[:apache][:worker][:threadsperchild] = 64
 default[:apache][:worker][:maxrequestsperchild] = 0
-
-# Proxy Attributes
-default[:apache][:proxy][:forward] = true
-default[:apache][:proxy][:reverse] = Array.new
